@@ -6,7 +6,7 @@ pip freeze
 create user username with password 'pass';
 alter user username superuser;
 grant all privileges on database mydb to myuser;
-grant all privileges on database beni to iti;
+#grant all privileges on database beni to iti;
 
 =================db migrations=================
 python manage.py makemigrations
