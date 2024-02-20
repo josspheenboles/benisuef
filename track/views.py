@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from  django.http import HttpResponse
+from django.shortcuts import render,reverse
+from  django.http import HttpResponse,HttpResponseRedirect
 from .models import *
 # Create your views here.
 def newtrack(request):
@@ -26,7 +26,13 @@ def trackbyid(request,id):
 def trackbyname(request,name):
     return HttpResponse(f'trackbyname{name}')
 def trackupdate(request,id):
-    return HttpResponse(f'trackupdate{id}')
+    if(request.method=='POST'):
+        Track.objects.filter(id=id).update(name=request.POST['trackname'])
+        return HttpResponseRedirect(reverse('Tracks'))
+    track=Track.objects.get(id=id)
+    context={'track':track}
+    return render(request,'track/updatetrack.html',context)
+    # return HttpResponse(f'trackupdate{id}')
 def trackdelete(request,id):
     return HttpResponse(f'trackdelete{id}')
 

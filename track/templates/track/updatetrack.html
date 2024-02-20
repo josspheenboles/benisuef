@@ -1,0 +1,14 @@
+{%extends 'track/Parent.html'%}
+{%block title%}
+        Track-Show
+{%endblock%}
+{%block content%}
+      <form method="post">
+              {%csrf_token%}
+             <input type="hidden" name="trackid" value="{{track.id}}">
+              <label>Name:</label>
+              <input value="{{track.name}}" type="text" name="trackname">
+              </br>
+              <input type="submit" value="Update">
+      </form>
+{%endblock%}
