@@ -2,6 +2,14 @@ from django.shortcuts import render
 from  django.http import HttpResponse
 from .models import *
 # Create your views here.
+def newtrack(request):
+    if(request.method=='POST'):
+        trackname=request.POST['trackname']
+        # Track.objects.create(name=trackname)
+        track=Track()
+        track.name=trackname
+        track.save()
+    return render(request,'track/newtrack.html')
 def hello(request):
     return HttpResponse('hello from track app')
 def alltracks(request):

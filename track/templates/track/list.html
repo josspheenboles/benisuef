@@ -3,7 +3,9 @@
         Track-List
 {%endblock%}
 {%block content%}
+
         <h1>Track List</h1>
+        <a href="{%url 'newtrack'%}">New</a>
         <table border="1" width="100%">
                 <tr>
                         <td>ID</td>
@@ -16,8 +18,8 @@
                         <td>{{track.name}}</td>
                         <td>
                                 <a href="{%url 'TrackByID' track.id%}">show</a>
-                                <a href="">update</a>
-                                <a href="">delete</a>
+                                <a href="{%url 'TrackUpdate' track.id%}">update</a>
+                                <a href="{%url 'TrackDelete' track.id%}">delete</a>
                         </td>
                         </tr>
                 {%endfor%}

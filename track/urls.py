@@ -20,6 +20,7 @@ from .views import *
 
 urlpatterns = [
     path('',hello),
+    path('Add/',newtrack,name='newtrack'),
     path('List/',alltracks,name='Tracks'),
     path('<int:id>/',trackbyid,name='TrackByID'),
     path('<str:name>/',trackbyname,name="TrackByName"),
