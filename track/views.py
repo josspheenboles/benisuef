@@ -5,10 +5,10 @@ def hello(request):
     return HttpResponse('hello from track app')
 def alltracks(request):
     # return HttpResponse('alltracks')
-    return render(request,'list.html')
+    return render(request,'track/list.html')
 def trackbyid(request,id):
     # return HttpResponse(f'trackbyid{id}')
-    return  render(request,'showtrack.html')
+    return  render(request,'track/showtrack.html')
 def trackbyname(request,name):
     return HttpResponse(f'trackbyname{name}')
 def trackupdate(request,id):
