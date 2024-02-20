@@ -12,7 +12,9 @@ def alltracks(request):
     return render(request,'track/list.html',context)
 def trackbyid(request,id):
     # return HttpResponse(f'trackbyid{id}')
-    return  render(request,'track/showtrack.html')
+    track=Track.objects.get(id=id)
+    context={'track':track}
+    return  render(request,'track/showtrack.html',context)
 def trackbyname(request,name):
     return HttpResponse(f'trackbyname{name}')
 def trackupdate(request,id):
