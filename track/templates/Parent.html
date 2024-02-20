@@ -1,0 +1,40 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {%block title%}
+        parent
+        {%endblock%}
+    </title>
+    <link type="text/css" href="{%static 'css/bootstrap.min.css'%}">
+</head>
+<body>
+<table class="table table-striped" border="1" width="100%">
+    <tr>
+        <td align="center" colspan="9">
+            <h1>Header</h1>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" colspan="2">
+            <h1>Menu</h1>
+        </td>
+        <td align="center" colspan="7">
+            {%block content%}
+        content
+        {%endblock%}
+        </td>
+    </tr>
+    <tr>
+        <td align="center" colspan="9">
+            <h1>footer</h1>
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>
+<script src="{%static 'js/bootstrap.min.js'%}" />
