@@ -21,9 +21,9 @@ from .views import *
 urlpatterns = [
     path('',hello),
     path('List/',alltracks,name='Tracks'),
-    path('/<int:id>',trackbyid,name='TrackByID'),
-    path('/<int:name>',trackbyname,name="TrackByName"),
-    path('Update/<int:id>',trackupdate,name="TrackUpdate"),
-    path('Delete/<int:id>',trackdelete,name="TrackDelete"),
+    path('<int:id>/',trackbyid,name='TrackByID'),
+    path('<str:name>/',trackbyname,name="TrackByName"),
+    path('Update/<int:id>/',trackupdate,name="TrackUpdate"),
+    path('Delete/<int:id>/',trackdelete,name="TrackDelete"),
 
 ]
