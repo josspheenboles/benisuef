@@ -3,5 +3,23 @@
         Track-List
 {%endblock%}
 {%block content%}
-        List
+        <h1>Track List</h1>
+        <table border="1" width="100%">
+                <tr>
+                        <td>ID</td>
+                        <td>Name</td>
+                        <td>Actions</td>
+                </tr>
+                {%for track in tracks%}
+                     <tr>
+                        <td>{{track.id}}</td>
+                        <td>{{track.name}}</td>
+                        <td>
+                                <a href="">show</a>
+                                <a href="">update</a>
+                                <a href="">delete</a>
+                        </td>
+                        </tr>
+                {%endfor%}
+        </table>
 {%endblock%}
